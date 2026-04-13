@@ -1,4 +1,4 @@
-name: Tester mon site Docker
+name: CI/CD Pipeline
 
 on:
   push:
@@ -23,5 +23,22 @@ jobs:
         sleep 2
         curl --fail http://localhost:8080 || exit 1
     
-    - name: Succès
-      run: echo "✅ Le site fonctionne parfaitement !"
+    - name: Vérifier le contenu HTML
+      run: |
+        curl -s http://localhost:8080 | grep -q "<h1>" && echo "✅ Titre trouvé" || exit 1
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Récupérer le code
+      uses: actions/checkout@v4
+    
+    - name: Déployer sur GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
+        keep_files: false
