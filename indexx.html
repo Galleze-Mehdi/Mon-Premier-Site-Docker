@@ -150,96 +150,6 @@
                 padding: 1rem;
             }
         }
-        /* Bouton style jeu de tir */
-        .game-btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-            color: white;
-            font-weight: bold;
-            font-size: 1rem;
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
-            letter-spacing: 1px;
-        }
-
-        .game-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(220, 38, 38, 0.8);
-            background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
-        }
-
-        .btn-text {
-            position: relative;
-            z-index: 2;
-        }
-
-        .btn-glow {
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.5s ease;
-            z-index: 1;
-        }
-
-        .game-btn:hover .btn-glow {
-            left: 100%;
-        }
-
-        .btn-shine {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-            opacity: 0;
-            transform: rotate(45deg);
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .game-btn:hover .btn-shine {
-            opacity: 1;
-            animation: shine 0.8s ease;
-        }
-
-        @keyframes shine {
-            0% {
-                transform: translateX(-100%) rotate(45deg);
-            }
-            100% {
-                transform: translateX(100%) rotate(45deg);
-            }
-        }
-
-        /* Animation de pulsation pour le statut */
-        @keyframes pulse-red {
-            0%, 100% {
-                box-shadow: 0 0 5px #ef4444, 0 0 10px #ef4444;
-            }
-            50% {
-                box-shadow: 0 0 20px #ef4444, 0 0 30px #dc2626;
-            }
-        }
-
-        .game-btn:active {
-            transform: scale(0.98);
-            transition: transform 0.05s;
-        }
-
     </style>
 </head>
 <body>
@@ -247,19 +157,10 @@
         <header>
             <h1>🚀 Welcome To My World 🚀</h1>
             <p>Galleze1#9304</p>
-                <div class="badge">
-             <!--   <span class="status"></span>
+            <div class="badge">
+                <span class="status"></span>
                 <button class="border-solid border-gray-250 text-sm px-4 h-10 gap-1 align-middle rounded items-center justify-center box-border disabled:text-gray-300 disabled:cursor-default border-0 bg-red-500 text-gray-0 hover:bg-red-600 disabled:bg-red-500 disabled:hover:bg-red-500 relative flex min-w-[77px]"> <a href="https://op.gg/valorant/profile/Galleze1-9304/agents?statQueueId=all"> Status </a> </button>
-                -->
-
-    
-    <span class="status"></span>
-    <a href="https://op.gg/valorant/profile/Galleze1-9304/agents?statQueueId=all" target="_blank" class="game-btn">
-        <span class="btn-text">🎯 Voir mon profil Valorant</span>
-        <span class="btn-glow"></span>
-        <span class="btn-shine"></span>
-    </a>
-
+                
                 
             </div>
         </header>
